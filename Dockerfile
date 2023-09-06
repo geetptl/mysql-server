@@ -2,23 +2,11 @@ FROM alpine:latest
 
 RUN apk update
 
-RUN apk add build-base
-
-RUN apk add cmake
-
-RUN apk add libressl-dev
-
-RUN apk add ncurses-dev
+RUN apk add binutils file gcc g++ make libc-dev fortify-headers patch cmake libressl-dev ncurses-dev bison libtirpc-dev rpcgen
 
 RUN wget -P /tmp/ https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.gz
 
 RUN tar -xf /tmp/boost_1_77_0.tar.gz --directory /usr/local/
-
-RUN apk add bison
-
-RUN apk add libtirpc-dev
-
-RUN apk add rpcgen
 
 RUN mkdir bld
 
