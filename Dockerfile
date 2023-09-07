@@ -10,7 +10,7 @@ RUN tar -xf /tmp/boost_1_77_0.tar.gz --directory /usr/local/
 
 RUN mkdir build
 
-RUN echo 'cd /build && cmake ../mysql-source/ -DWITH_BOOST=/usr/local/boost_1_77_0 -DWITH_SSL=system && make install' > /install.sh
+RUN echo 'cd /build && cmake ../mysql-source/ -DWITH_BOOST=/usr/local/boost_1_77_0 -DWITH_SSL=system && make package' > /install.sh
 
 RUN chmod +x /install.sh
 
